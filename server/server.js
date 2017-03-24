@@ -11,6 +11,7 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+// PSOT /todos/:id
 app.post('/todos', (req, res) => {
 	var todo = new Todo({
 		text: req.body.text
@@ -62,15 +63,6 @@ app.delete('/todos/:id', (req, res) => {
 		}).catch((e) => {
 			res.satus(400).send();
 		});
-	//validate the id -> not valid return 404
-
-	//remove todo by id
-		// success
-			 //if no doc send 404
-			 // if doc send doc back and 200
-		// error
-			//400 empty body
-
 });
 
 
